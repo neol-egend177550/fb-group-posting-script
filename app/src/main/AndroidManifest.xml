@@ -1,0 +1,71 @@
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.neol-egend177550.fb-group-posting-script">
+
+    <!-- 
+        This is the AndroidManifest.xml file for the 
+        fb group posting script - Android Automation Tool. 
+        The application utilizes the MadHub framework 
+        to enable automated social media management, including 
+        scheduling and content management for platforms like 
+        Facebook, Instagram, and TikTok.
+    -->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        
+        <!-- MainActivity serves as the entry point of the application -->
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- AutomationService handles background tasks for scheduling and managing social media operations -->
+        <service android:name=".AutomationService" />
+        
+    </application>
+
+    <!-- Required permissions for the application to function properly -->
+
+    <!-- 
+        Permission to access the internet is essential for 
+        the application to communicate with social media platforms 
+        for automated operations.
+    -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
+    <!-- 
+        Permission to access external storage is required for 
+        the application to save and manage content schedules and logs.
+    -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!-- 
+        Permission to access network state allows the application 
+        to determine if the device is connected to the internet, 
+        enabling it to manage tasks accordingly.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+</manifest>
+```
+
+### Explanation of Key Components:
+- **Application Section**: This includes the basic settings such as application icon, theme, and the main entry point (MainActivity) and background service (AutomationService).
+  
+- **Permissions**:
+  - **INTERNET**: Needed for network communication with social media platforms.
+  - **WRITE_EXTERNAL_STORAGE** and **READ_EXTERNAL_STORAGE**: Required for saving data such as content schedules and logs.
+  - **ACCESS_NETWORK_STATE**: Allows the app to check the device's network connectivity.
+
+### Note:
+This configuration ensures that the application aligns with the MadHub product's capabilities and respects all compliance and ethical guidelines stipulated.
